@@ -1,0 +1,35 @@
+Project: Juicero - Juice Selling Chat-bot
+
+Description:
+Juicero is a chat-bot built using the Rasa framework that facilitates the selling of juices. It enables users to interact with the chat-bot to explore and purchase various juice products. The project incorporates both backend and frontend components, providing a seamless user experience.
+
+Backend Technologies:
+- Chat-bot Framework: Rasa (Version: 2.5.1)
+- Rasa SDK Version: 2.5.0
+- Rasa Action Server
+- MySQL (Version: 8.0.31)
+- Python Version: 3.7.4
+
+Frontend Technologies:
+- HTML
+- CSS
+- JavaScript
+- jQuery
+
+Features:
+- Execute Custom SQL Query: Users can enter custom SQL queries to interact with the underlying MySQL database. The Rasa server classifies the user input and requests the Rasa Action Server to execute the query and return the output, which is then displayed in the bot front-end.
+
+- View Graphical Stats: Users can click a button to refresh and view graphical statistics. The Rasa server processes this request, triggers the Rasa Action Server to update the graphs using the matplotlib.pyplot library, and saves the graphs as PNG images. The front-end fetches these images and displays them to the users.
+
+User Roles:
+1. Admin: Responsible for managing customers, delivery guys, and products. They can add or remove users, update customer details, and manage product inventory.
+2. Delivery Guy: Handles order status updates, changing the status of pending orders to completed.
+3. Customer: Registers, searches and views products, places orders, and provides feedback.
+
+This project showcases the integration of a chat-bot interface with a backend MySQL database, enabling users to interact with the system in a conversational manner. The frontend provides a visually appealing and user-friendly interface for seamless navigation and interaction.
+
+Responsibilities:
+- Designed and implemented the Rasa chat-bot framework, handling intents, actions, and user queries.
+- Integrated MySQL database for product management and user data storage.
+- Developed backend logic to execute custom SQL queries and update graphical statistics using the Rasa Action Server.
+- Created the front-end interface using HTML, CSS, JavaScript, and jQuery, allowing users to interact with the chat-bot and view graphical stats.

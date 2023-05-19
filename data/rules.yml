@@ -1,0 +1,217 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: login rule
+  steps:
+  - intent: login
+  - action: login_form
+  - active_loop: login_form
+  - active_loop: null
+  - action: action_login
+  - action: action_reset_select_slots
+
+- rule: customer register rule
+  steps: 
+  - intent: register_as_customer
+  - action: utter_customer_registration
+  - action: register_customer_form
+  - active_loop: register_customer_form
+  - active_loop: null
+  - action: action_register_customer
+  - action: action_reset_select_slots
+
+- rule: check login status
+  steps:
+  - intent: check_login_status
+  - action: action_check_login_status
+  - action: action_reset_select_slots
+
+- rule: add product rule following condition was met
+  condition:
+  - slot_was_set:
+    - f_login_type: "1"
+  steps:
+  - intent: add_product     
+  - action: add_product_form
+  - active_loop: add_product_form
+  - active_loop: null
+  - action: action_add_product
+  - action: action_reset_select_slots
+
+- rule: add product rule when not loggged in as admin
+  steps:
+  - intent: add_product     
+  - action: utter_admin_has_privileges
+  - action: action_reset_select_slots
+
+
+- rule: to logout
+  steps:
+  - intent: logout
+  - action: action_logout
+
+- rule: add admin or delivery guy when admin is logged in 
+  condition:
+  - slot_was_set:
+    - f_login_type: "1"
+  steps: 
+  - intent: add_admin_or_delivery_guy
+  - action: register_admin_or_delivery_guy_form
+  - active_loop: register_admin_or_delivery_guy_form
+  - active_loop: null
+  - action: action_add_admin_or_delivery_guy
+
+- rule: add admin or delivery guy when admin is not  logged in 
+  steps: 
+  - intent: add_admin_or_delivery_guy
+  - action: utter_admin_has_privileges
+  - action: action_reset_select_slots
+
+
+- rule: to remove a customer
+  steps:
+  - intent: remove_customer
+  - action: action_tell_customers_name
+  - action: delete_customer_form
+  - active_loop: delete_customer_form
+  - active_loop: null
+  - action: action_remove_customer
+  - action: action_reset_select_slots
+
+- rule: to delete a product
+  steps:
+  - intent: remove_product 
+  - action: utter_tell_product_columns
+  - action: get_cols_form
+  - active_loop: get_cols_form
+  - active_loop: null
+  - action: action_view_product_by_calls_for_removal
+  - action: id_form
+  - active_loop: id_form
+  - active_loop: null
+  - action: action_delete_product
+  - action: action_reset_select_slots
+
+- rule: show all products
+  steps:
+  - intent: view_all_products
+  - action: utter_all_products
+  - action: utter_tell_product_columns
+  - action: get_cols_form
+  - active_loop: get_cols_form
+  - active_loop: null
+  - action: action_show_all_products
+  - action: action_reset_select_slots
+
+
+- rule: search products
+  steps:
+  - intent: search_products
+  - action: utter_search_products
+  - action: search_product_form
+  - active_loop: search_product_form
+  - active_loop: null
+  - action: action_search_products
+  - action: action_reset_select_slots
+
+
+- rule: place orders
+  steps:
+  - intent: place_order
+  - action: place_order_form
+  - active_loop: place_order_form
+  - active_loop: null
+  - action: action_place_order
+  - action: action_reset_select_slots
+
+- rule: show my orders
+  steps:
+  - intent: show_my_orders
+  - action: action_show_my_orders
+  - action: action_reset_select_slots
+
+- rule: give feedback
+  steps:
+  - intent: give_feedback
+  - action: action_show_feedback_products
+  - slot_was_set:
+    - f_login_type: "2"
+  - action: feedback_form
+  - active_loop: feedback_form
+  - active_loop: null
+  - action: action_feedback_submit
+  - action: action_reset_select_slots
+
+- rule: show all feedbacks , product_wise
+  steps:
+  - intent: show_all_feedbacks
+  - action: action_show_all_feedbacks
+  - action: action_reset_select_slots
+
+- rule: show select feedbacks for select product
+  steps:
+  - intent: show_select_feedbacks
+  - action: feedback_product_form
+  - active_loop: feedback_product_form
+  - active_loop: null
+  - action: action_show_select_feedbacks
+  - action: action_reset_select_slots
+
+- rule: show orders
+  steps:
+  - intent: show_orders
+  - action: way_to_view_order_form
+  - active_loop: way_to_view_order_form
+  - active_loop: null
+  - action: action_show_orders
+  - action: action_reset_select_slots
+
+- rule: update order status
+  steps:
+  - intent: update_order_status
+  - action: order_ids_form
+  - active_loop: order_ids_form
+  - active_loop: null
+  - action: action_update_order_status
+  - action: action_reset_select_slots
+
+- rule: update product quantity
+  steps:
+  - intent: update_product_quantity
+  - action: product_id_quantity_form
+  - active_loop: product_id_quantity_form
+  - active_loop: null
+  - action: action_update_product_quantity
+  - action: action_reset_select_slots
+
+- rule: update graphs
+  steps:
+  - intent: update_graphs
+  - action: action_update_graphs
+  - action: action_reset_select_slots
+
+- rule: execute custom mysql query
+  steps:
+  - intent: execute_custom_sql_query
+  - action: mysql_cmd_form
+  - active_loop: mysql_cmd_form
+  - active_loop: null
+  - action: action_execute_custom_mysql_query
+  - action: action_reset_select_slots
+
+- rule: tell purpose
+  steps:
+  - intent: tell_purpose
+  - action: utter_tell_purpose
+  - action: action_reset_select_slots

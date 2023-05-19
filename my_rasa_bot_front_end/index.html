@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./chatbot-uidiscord.css">
+        <script src="./chatbot-ui.js"></script>
+        <link rel="stylesheet" href="./stylesdiscord.css">
+        <script src="./scripts.js"></script>
+    </head> 
+
+
+<body >
+    <header class="myheader">
+        <div  id="mySidenav" class="sidenav" overflow-x="hidden">
+
+            <div class="profile_pic">
+                <img alt="JUICERO bot logo" src="./images/bot-logo.png" >
+                <h2>JUICERO bot</h2>
+            </div>
+            <hr />
+    
+            <br />
+            
+            <a href= "./index.html">Chat with JUICERO</a> <br />
+            <a href= "./view_graphical_stats/view_graphical_stats.html">View Graphical stats</a> <br />
+            <a href= "./execute_custom_sql_query/execute_custom_sql_query.html">Execute Custom SQL query</a> <br />
+            <a href= "./about_me/about_me.html">About me</a><br />
+    
+            <button class="closebtn" onclick="closeNav()"><img src="./images/close_side_nav.png" height="40" width="30" /></button>
+    
+        </div>
+    
+        <div id="menu_load_opt" class="menu_load_opt">
+            <button class="openbtn" onclick="openNav()"> <img src="./images/menu_load.png" height="40" alt="open menu bar" /></button>
+        </div>
+        <div class="center-content">
+            <h1>JUICERO bot</h1>
+          </div>
+        <hr />
+    </header>
+    <div class="hero">
+        <div class="hero-content">
+          <div data-aos="fade-down-left" data-aos-duration="1000" class="hero-header">
+            <h1>Get your hands on our<br><span class="primary-color"> Delicious Juice Flavors</span><br> from our JUICERO bot!</h1>
+      
+            <br />
+            <p>
+                Looking for fresh, delicious juice options? Look no further than JUICERO! Our juices come in a variety of alluring flavors and are designed to be both tasty and nutritious.
+                From invigorating citrus blends to soothing green drinks, we've got a juice for every taste preference and lifestyle.
+                Plus, with our commitment to using only high-quality, natural ingredients, you can feel good about what you're drinking.
+                Explore our selection and find your new favorite juice today!
+            </p>
+      
+            <br>
+            <h3><span class="primary-color cachy-line">Order. Sip. Repeat.</span></h3>
+
+      
+            <!-- <div class="btns">
+              <a href="#get-started"><button class="btn-green">Get Started</button></a>
+              <a href="Chatbot-UI.zip" download><button class="btn-green ">Download</button></a>
+            </div> -->
+          </div>
+        </div>
+        <div class="hero-bot">
+          <img src="./images/homepage-bot.png" alt="Bot Image">
+        </div>
+      </div>
+      
+
+    
+ <div class="don" >
+    <div id="chat-container"></div>
+    <script>
+        createChatBot(host = 'http://localhost:5005/webhooks/rest/webhook', botLogo = "./imgs/bot-logo.png",
+            title = "JUICERO bot", welcomeMessage = "Hey, i am a Bot", inactiveMsg = "Server is down, Please contact the developer to activate it")
+    </script>
+ </div>
+ 
+
+</body>
+</html>

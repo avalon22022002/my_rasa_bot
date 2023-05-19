@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="windows-1252" />
+    <title>JUICERO Terminal</title>
+    <link rel="stylesheet" href="./stylesdiscord.css" />
+
+    <!-- link to jQuery library -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- script for dropdown functionality -->
+	<script>
+		$(document).ready(function(){
+			$("#dropdown-button").click(function(){
+				$("#demo-vedio").toggle();
+			});
+		});
+	</script>
+  </head>
+  <body>
+    <header class="myheader">
+      <div  id="mySidenav" class="sidenav" overflow-x="hidden">
+
+          <div class="profile_pic">
+              <img alt="JUICERO bot logo" src="../images/bot-logo.png" >
+              <h2>JUICERO bot</h2>
+          </div>
+          <hr />
+  
+          <br />
+          
+          <a href= "../index.html">Chat with JUICERO</a> <br />
+          <a href= "../view_graphical_stats/view_graphical_stats.html">View Graphical stats</a> <br />
+          <a href= "./execute_custom_sql_query.html">Execute Custom SQL query</a> <br />
+          <a href= "../about_me/about_me.html">About me</a><br />
+  
+          <button class="closebtn" onclick="closeNav()"><img src="../images/close_side_nav.png" height="40" width="30" /></button>
+  
+      </div>
+  
+      <div id="menu_load_opt" class="menu_load_opt">
+          <button class="openbtn" onclick="openNav()"> <img src="../images/menu_load.png" height="40" alt="open menu bar" /></button>
+      </div>
+      <div class="center-content">
+          <h1>JUICERO bot</h1>
+        </div>
+      <hr />
+  </header>
+
+<div class="body">
+    <div id="terminal">
+      <pre id="console"></pre>
+      <form>
+        <span id="user">&gt;</span>
+        <textarea
+          id="input"
+          name="input"
+          autofocus
+          rows="1"
+          placeholder="Type a command and press Enter"
+        ></textarea>
+      </form>
+    </div>
+</div>
+    <script src="./scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+Download this project file from github my account
+Install rasa 
+  pip install rasa==2.5.1 rasa-sdk==2.5.0
+Install mysql ( and update ur mysql details in actions.py file ) 
+Create a database myrasabot
+Also run final_sql_cmds.sql to initialize the database.. 
+Make sure you have python version 3.7.4
+
+Cmds to run 
+Terminal 0 :
+   rasa train   
+  // train only once after changes are made in files
+
+Terminal 1:
+  rasa run actions  --debug
+// running rasa action server 
+
+Terminal 2:
+ rasa run -m models --enable-api --cors "*" --debug
+  //running rasa server 
+
+Terminal 3:
+  mysql -u root -p
+  use myrasa bot
+  //login to mysql to see changes
+
+U can ignore myenv file
+
+

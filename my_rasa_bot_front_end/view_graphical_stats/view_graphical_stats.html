@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./stylesdiscord.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="./scripts.js"></script>
+    </head>
+
+
+<body >
+    <header class="myheader">
+        <div  id="mySidenav" class="sidenav" overflow-x="hidden">
+
+            <div class="profile_pic">
+                <img alt="JUICERO bot logo" src="../images/bot-logo.png" >
+                <h2>JUICERO bot</h2>
+            </div>
+            <hr />
+    
+            <br />
+            
+            <a href= "../index.html">Chat with JUICERO</a> <br />
+            <a href= "./view_graphical_stats.html">View Graphical stats</a> <br />
+            <a href= "../execute_custom_sql_query/execute_custom_sql_query.html">Execute Custom SQL query</a> <br />
+            <a href= "../about_me/about_me.html">About me</a><br />
+            
+            <button class="closebtn" onclick="closeNav()"><img src="../images/close_side_nav.png" height="40" width="30" /></button>
+    
+        </div>
+    
+        <div id="menu_load_opt" class="menu_load_opt">
+            <button class="openbtn" onclick="openNav()"> <img src="../images/menu_load.png" height="40" alt="open menu bar" /></button>
+        </div>
+        <div class="center-content">
+            <h1>JUICERO bot</h1>
+          </div>
+        <hr />
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <img src="./graphs_images/product_no_of_orders.png" alt="Product no of orders" height="300" width="600" />
+            </div>
+            <div class="column">
+                <img src="./graphs_images/product_feedback_graph.png" alt="Product feedback graph"  height="300" width="600" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <img src="./graphs_images/orders_month.png" alt="Orders month"  height="300" width="600" />
+            </div>
+            <div class="column">
+                <img src="./graphs_images/orders_month_cost.png" alt="Orders month cost"  height="300" width="600" />
+            </div>
+        </div>
+         
+        <button class="refreshbtn" onclick="refresh()"><img src="./refresh_icon.png" alt="refresh all graphs" /></button>
+    </div>
+
+   
+
+</body>
+</html>

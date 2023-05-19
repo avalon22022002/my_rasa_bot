@@ -1,0 +1,231 @@
+:root {
+  --my-header-color: #2f3136;
+}
+
+/* css for header and side menu bar */
+.myheader{
+  background-color: var(--my-header-color);
+  background-size: cover;
+  background-position: center;
+}
+.sidenav {
+  width: 400px;
+  position: fixed;
+  margin-top: 0px;
+  background-color: #36393f;
+  overflow-x: hidden;
+  padding-top: 0px;
+  transition: 0.5s;
+}
+
+.profile_pic {
+  margin-top: 40px;
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.profile_pic img {
+  height:150px;
+  width:150px;
+  margin-bottom: 10px;
+  margin-left: -150px;
+  position: center;
+  border-radius:50%;
+  box-shadow:-1px 1px 7px #2f3136;
+  object-fit:cover;
+}
+
+.profile_pic h2 {
+  white-space: nowrap;
+  margin-top: 10px;
+  margin-left: -150px;
+  margin-bottom: 0px;
+  align-items: center;
+  font-size: medium;
+  font-weight: 1000;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+  color: #fff;
+}
+
+.sidenav a {
+  display: block;
+  padding: 10px;
+  margin-left: 40px;
+  text-decoration: none;
+  text-emphasis-color: #b9bbbe;
+  color: #fff;
+}
+
+.sidenav a:hover {
+  background-color: #7289da;
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 36px;
+  margin-right: 10px;
+  margin-top: 5px;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+}
+
+.openbtn {
+  border-radius: 60%;
+  background-color: var(--my-header-color);
+  font-size: 30px;
+  cursor: pointer;
+  margin-left: 0px;
+  margin-top: 0px;
+  border: hidden;
+  -webkit-border-radius: 60%;
+  -moz-border-radius: 60%;
+  -ms-border-radius: 60%;
+  -o-border-radius: 60%;
+}
+.openbtn img{
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.menu_load_opt {
+  transition: margin-left 0.5s;
+  padding: 20px;
+}
+
+/* center content */
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: -6%;
+  margin-bottom: -1%;
+}
+
+.center-content h1 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+
+
+/* body */
+body {
+  background-color: var(--my-header-color);
+  color: #fff;
+  margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+/* the about me content */
+
+/* CSS for the dropdown button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* CSS for the dropdown button on hover */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41;
+}
+
+/* CSS for the container of the dropdown items */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* CSS for the dropdown items */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+}
+
+/* CSS for the dropdown items on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* CSS for showing the dropdown items */
+.show {
+  display: block;
+}
+
+
+
+
+
+/* css for about me content  */
+button {
+  background-color: #7289da;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+button:focus {
+  outline: none;
+}
+
+.credits,
+.documentation,
+.tech-dependencies,
+.demo-video {
+  margin-bottom: 20px;
+}
+
+button.credits-btn,
+button.documentation-btn,
+button.tech-dependencies-btn,
+button.demo-video-btn {
+  width: 100%;
+  text-align: left;
+}
+
+.credits-details,
+.documentation-details,
+.tech-dependencies-details,
+.demo-video-details {
+  display: none;
+  background-color: #2f3136;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.credits-details p,
+.documentation-details p,
+.tech-dependencies-details ul li,
+.demo-video-details p {
+  margin: 5px 0;
+}
+
+.show {
+  display: block;
+}

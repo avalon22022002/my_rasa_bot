@@ -1,0 +1,287 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: login
+  examples: |
+    - I want to login
+    - I need to login 
+    - login 
+    - log me in 
+    - log in as 
+    - i want to login as 
+
+- intent: logout
+  examples: |
+    - I want to logout
+    - I need to signout 
+    - logout
+    - log me out 
+    - signout
+ 
+
+- intent: register_as_customer
+  examples: | 
+    - I want to register as customer
+    - register
+    - let me register
+    - customer register
+    - new customer
+
+- intent: check_login_status
+  examples: |
+    - see if i have logged in 
+    - check my login status 
+    - did i login in 
+    - how did i login as 
+    - what are my priviliges
+    - tell me my login type
+
+- intent: add_product
+  examples: |
+    - I want to add product
+    - add this product
+    - add a product
+    - add a juice
+    - add a juice to database
+    - new product
+    - new juice
+
+- intent: remove_customer
+  examples: |
+    - I want to remove a customer
+    - remove this customer
+    - customer delete
+    - delete a customer
+    
+
+- intent: add_admin_or_delivery_guy
+  examples: |
+    - I want to add a new admin
+    - I want to register as delivery guy
+    - register as delivery guy
+    - let me register as delivery guy
+    - delivery guy register
+    - new delivery guy
+    - I want to register as admin
+    - admin register
+    - let me register as admin
+    - admin registratino
+    - new admin
+
+- intent: remove_product
+  examples: |
+    - I want to remove a product
+    - remove this product
+    - product delete
+    - delete a product
+    - delete this product
+    - remove this product
+
+- intent: view_all_products
+  examples: |
+    - I want to view all products
+    - see all products
+    - list all products
+    - show all products
+    - display all products
+    - all products
+
+- intent: search_products
+  examples: |
+    - I want to search products
+    - look for product
+    - find products
+    - find me juice 
+    - grab me a juice
+    - grab me a product
+    - find juice
+    - search juice
+    - search juices
+    - look for juices
+
+- intent: place_order
+  examples: |
+    - I want to place order
+    - buy products
+    - order products
+    - buy me juice 
+    - order me a juice
+    - order me a product
+    - buy juice
+    - place an order for juice
+    - order juices
+    - order product for me
+
+- intent: show_my_orders
+  examples: |
+    - I want to see my orders
+    - show recent orders made me
+    - order history of mine
+    - orders in past made by me
+    - display all of my orders
+    - list all of my orders
+   
+- intent: give_feedback
+  examples: |
+    - I want to give feedback
+    - take my feedback
+    - take my reviews 
+    - i need to give my review
+    - feedback
+    - review
+
+- intent: show_all_feedbacks
+  examples: |
+    - I want to view feedbacks given by my customers
+    - show customer reviews
+    - show how my customer rates my products
+    - feedback view
+    - display feedbacks
+    - display customer reviews.
+
+- intent: show_select_feedbacks
+  examples: |
+    - I want to see feedback for this product
+    - show me feedback for a product
+    - show me feedback fo this juice
+    - review this product
+    - review this juice
+
+- intent: show_orders
+  examples: |
+    - show orders 
+    - display all orders
+    - show me all orders made so far now
+    - I want to see all pending orders
+    - show me all orders with pending
+    - list all orders
+    - diplay orders
+    - orders
+
+- intent: update_order_status
+  examples: |
+    - update order status
+    - i have delivered a few orders
+    - i want to update few orders
+    - update these order status
+    - i have completed these orders
+    - did these orders
+    - these orders are done
+    - orders delivered
+    - orders completed
+
+- intent: update_product_quantity
+  examples: |
+    - update product quantities
+    - i bought some quantities of products
+    - add these to product quantities
+    - increase product quantity of these products
+
+- intent: update_graphs
+  examples: |
+    - update graphs
+    - refresh graphs
+    - refresh all graphs
+    - update all graphs
+
+
+- intent: execute_custom_sql_query
+  examples: |
+    - execute custom mysql command
+    - execute custom mysql query
+    - mysql command
+    - mysql query
+    - mysql
+    - custom mysql query
+    - custom mysql command
+
+- intent: tell_purpose
+  examples: |
+    - what do you do?
+    - what is your purpose?
+    - what do you sell
+    - purpose
+    - what is your intent
+    

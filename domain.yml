@@ -1,0 +1,319 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- login
+- logout
+- register_as_customer
+- check_login_status
+- add_product
+- add_admin_or_delivery_guy
+- remove_customer
+- remove_product
+- view_all_products
+- search_products
+- place_order
+- show_my_orders
+- give_feedback
+- show_all_feedbacks
+- show_select_feedbacks
+- show_orders
+- update_order_status
+- update_product_quantity
+- update_graphs
+- execute_custom_sql_query
+
+
+
+
+slots: 
+   user_type:
+     type: text
+   user_phno:
+     type: text
+   user_password:
+     type: text
+   f_login_type:
+     type: text
+   f_login_phno:
+     type: text
+   f_login_password:
+     type: text
+   name:
+     type: text
+   city_name:
+     type: text
+   address:
+     type: text
+   p_name:
+     type: text
+   p_price:
+     type: text
+   p_quantity:
+     type: text
+   p_rating:
+     type: text
+   p_description:
+     type: text
+   p_image_links_text:
+     type: text
+   id:
+     type: text
+   admin_or_delivery_guy:
+     type: text
+   new_name:
+     type: text
+   new_password:
+     type: text
+   new_phno:
+     type: text
+   cols:
+     type: text
+   choice:
+     type: text
+   value:
+     type: text
+   order:
+     type: text
+   p_ids:
+     type: text
+   f_content:
+     type: text
+   f_p_rating:
+     type: text
+   f_p_name:
+     type: text
+   o_choice:
+     type: text
+   o_ids:
+     type: text
+   o_status:
+     type: text
+   p_id_quantity:
+     type: text
+   mysql_cmd:
+     type: text
+  
+
+forms:
+  login_form:
+    user_type: # 1,2,3 for admin , customer, delivery_guy
+      - type: from_text
+    user_phno:
+      - type: from_text
+    user_password:
+      - type: from_text
+  
+  register_customer_form:
+    name: 
+      - type: from_text
+    user_phno:
+      - type: from_text
+    user_password:
+      - type: from_text
+    city_name:
+      - type: from_text
+    address: 
+      - type: from_text
+  add_product_form:
+    p_name:
+      - type: from_text
+    p_quantity:
+      - type: from_text
+    p_rating:
+      - type: from_text
+    p_price:
+      - type: from_text
+    p_description:
+      - type: from_text
+    p_image_links_text:
+      - type: from_text
+
+  register_admin_or_delivery_guy_form:
+     admin_or_delivery_guy:
+      - type: from_text
+     new_name:
+      - type: from_text
+     new_phno: 
+      - type: from_text
+     new_password:
+      - type: from_text
+
+  delete_customer_form:
+    id:
+      - type: from_text
+  get_cols_form:
+    cols:
+      - type: from_text
+  id_form:
+    id:
+      - type: from_text
+  search_product_form:
+    choice:       # 1- search by name , 2 search by price , 3 search by rating (1-5)
+      - type: from_text
+    value:
+      - type: from_text
+
+  place_order_form:
+    order:
+      - type: from_text  
+
+  feedback_form:
+    p_ids:
+      - type: from_text
+    f_content:
+      - type: from_text    
+    f_p_rating:
+      - type: from_text
+  
+  feedback_product_form:
+    f_p_name:
+      - type: from_text
+
+  way_to_view_order_form:
+    o_choice:
+      - type: from_text
+  
+  order_ids_form:
+    o_ids:
+      - type: from_text
+
+  product_id_quantity_form:
+    p_id_quantity:
+      - type: from_text
+  mysql_cmd_form:
+    mysql_cmd:
+      - type: from_text
+
+
+actions:
+  - action_login
+  - action_hello_world
+  - action_register_customer
+  - action_reset_select_slots
+  - action_add_product
+  - action_logout
+  - action_check_login_status
+  - action_remove_customer
+  - action_tell_customers_name
+  - action_add_admin_or_delivery_guy
+  - action_remove_product
+  - action_view_product_by_calls_for_removal
+  - action_delete_product
+  - action_show_all_products
+  - action_search_products
+  - action_place_order
+  - action_show_my_orders
+  - action_show_feedback_products
+  - action_feedback_submit
+  - action_show_all_feedbacks
+  - action_show_select_feedbacks
+  - action_show_orders
+  - action_update_order_status
+  - action_update_product_quantity
+  - action_update_graphs
+  - action_execute_custom_mysql_query
+  - action_initialize_mysql
+
+responses:
+  utter_greet:
+  - text: Hey! Hope are doing well?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+    image: './robot_pics/robot-doing-peace-sign.png'
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+    image: './robot_pics/robot-sitting-back-relaxing.png'
+  utter_ask_user_type:
+  - text: "please enter the the type of user...\n1 . admin\n2 . customer\n3 . delivery_guy\n"
+  utter_ask_user_phno:
+  - text: please enter your phno 
+  utter_ask_user_password:
+  - text: please enter your password
+  utter_ask_name:
+  - text: please enter your name.
+  utter_ask_city_name:
+  - text: please enter the name of city in which you live in
+  utter_ask_address:
+  - text: please enter the address for delivery purposes
+  utter_admin_register:
+  - text: for security reasons only admin can register another admin.
+  utter_delivery_guy_register:
+  - text: for security reasons only admin can register delivery guy.
+  utter_customer_registration:
+  - text: registering a new customer.
+  utter_ask_p_name:
+  - text: What is the name of the product you want to add?
+  utter_ask_p_price:
+  - text: what is the price per unit of the product?
+  utter_ask_p_quantity:
+  - text: How many units of the product do you have in stock?
+  utter_ask_p_rating:
+  - text: How would you rate the product on a scale of 1 to 5 stars?
+  utter_ask_p_description:
+  - text: Please provide a brief description of the product features and benefits.
+  utter_ask_p_image_links_text:
+  - text: "please enter the links( https ) in one text separted by ',' " 
+  utter_admin_has_privileges:
+  - text: "sorry only admin has the previlidges of performing requested action.Please login as admin..!"
+  utter_ask_id:
+  - text: "please enter the id : "
+  utter_ask_admin_or_delivery_guy:
+  - text: "press\n1 for admin\n2 for delivery_guy\n"
+  utter_ask_new_name:
+  - text: please tell the name
+  utter_ask_new_phno:
+  - text: please tell the phone number
+  utter_ask_new_password:
+  - text: please tell the password
+  utter_tell_product_columns:
+  - text: "The columns are\n1) p_name\n2) p_quantity\n3) p_rating\n4) p_description\n"
+  utter_ask_cols:
+  - text: "please write numbers of columns u want to view in a text seperated by ',' [ example: 1,3 ]\n"
+  utter_all_products:
+  - text: "sure here is a list of all products."
+  utter_search_products:
+  - text: "sure, please choose the way to search\n1) search by name\n2) search by price\n3) search by rating(1.0-5.0) - dont forget '.'\n"
+  utter_ask_choice:
+  - text: "what is your choice"
+  utter_ask_value:
+  - text: "what is the value corresponding to your choice"
+  utter_ask_order:
+  - text: "Please enter your order : [here's an example for format : 'maza:3,pepsi:4,7up:8']"
+  utter_ask_p_ids:
+  - text: "enter the product ids for which u want to give feedback. [ here's an example for format : '120,34,5,556']"
+  utter_ask_f_content:
+  - text: "please enter the feedback content.. u can give content for each product id separated by comma"
+  utter_ask_f_p_rating:
+  - text: "please rate the products on a scale of 1.0 - 5.0 . you can give ratings for each produc id separated by ',' "
+  utter_ask_f_p_name:
+  - text: "please enter the product name for which u wish to view feedbacks."
+  utter_ask_o_choice:
+  - text: "1. List all orders\n2. List only pending orders\n3. List only completed orders\nPlease enter your choice:"
+  utter_ask_o_ids:
+  - text: "please enter the order_ids of the orders whose status u is to be changed from Pending to Completed..[Ex: '12,344,004']."
+  utter_ask_p_id_quantity:
+  - text: "please enter the ids and quantities. [ex: '602:3,440:4,450:8' -- product_id:product_quantity, ].\n.Use all to increase quantites of all products [ex: all:5 - to increase quantites of all products by 5]."
+  utter_ask_mysql_cmd:
+  - text: "enter mysql command"
+  utter_tell_purpose:
+  - text: "i sell juices. Fruit juices are always great wanna have one.?"
+    image: './robot_pics/robot-with-drink.png'

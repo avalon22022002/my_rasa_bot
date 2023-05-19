@@ -1,0 +1,16 @@
+Shorter one::
+Project: Juicero - Juice Selling Chat-bot ( demo_link ,  github_link ) 
+
+	•     Built a Rasa-based chat-bot facilitating the selling of juices, integrating a MySQL database.
+	•     Developed a user-friendly front-end using HTML, CSS, JavaScript, and jQuery.
+	•     Implemented features such as executing custom SQL queries and displaying graphical statistics.
+	•     Managed user roles (admin, delivery guy, customer) for tasks like product management, order updates, and feedback.
+	•     technologies used 
+		○ Front-end:  HTML , CSS , JS , JQUERY
+		○ Back-end :  rasa framework , python , mysql 
+    
+
+Demo_link:  https://www.youtube.com/watch?v=KJ2jtecqijE  
+Github_link:  https://github.com/avalon22022002/my_rasa_bot
+
+

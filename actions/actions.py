@@ -26,7 +26,7 @@ from difflib import get_close_matches
 import random
 
 
-mysql_password="pnp@22022002"
+mysql_password=""
  # please update your mysql password above.
 
 

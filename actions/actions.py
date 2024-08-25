@@ -26,8 +26,9 @@ from difflib import get_close_matches
 import random
 
 
-mysql_password=""
- # please update your mysql password above.
+mysql_password="123456" # update password if needed
+mysql_host ="host.docker.internal" # replace it by 'localhost' if running in local
+
 
 
 class ResetSlotsAction(Action):
@@ -95,7 +96,7 @@ class ActionLogin(Action):
 
     # Connect to the local instance of MySQL
     db = mysql.connector.connect(
-      host="localhost",
+      host=mysql_host,
       user="root",
       password=mysql_password,
       database="myrasabot"
@@ -196,7 +197,7 @@ class ActionRegisterCustomer (Action):
 
     # connect to the mysql database
     db = mysql.connector.connect (
-      host="localhost",
+      host=mysql_host,
       user="root",
       password=mysql_password,
       database="myrasabot"
@@ -257,7 +258,7 @@ class ActionAddProduct(Action):
             # connect to the SQL database
             # connect to the mysql database
             db = mysql.connector.connect (
-                host="localhost",
+                host=mysql_host,
                 user="root",
                 password=mysql_password,
                 database="myrasabot"
@@ -312,7 +313,7 @@ class ActionRemoveCustomer(Action):
         
         # Connect to the local instance of MySQL
         db = mysql.connector.connect(
-          host="localhost",
+          host=mysql_host,
           user="root",
           password=mysql_password,
           database="myrasabot"
@@ -352,7 +353,7 @@ class ActionTellCustomersName(Action):
         # connect to MySQL
        # Connect to the local instance of MySQL
         mydb = mysql.connector.connect(
-          host="localhost",
+          host=mysql_host,
           user="root",
           password=mysql_password,
           database="myrasabot"
@@ -393,7 +394,7 @@ class ActionAddAdminOrDeliveryGuy(Action):
     
         # connect to mysql database
         db = mysql.connector.connect(
-            host="localhost",
+            host=mysql_host,
             user="root",
             password=mysql_password,
             database="myrasabot"
@@ -466,7 +467,7 @@ class ViewProductByCallsForRemoval(Action):
         
         # Connect to MySQL
         db = mysql.connector.connect(
-            host="localhost",
+            host=mysql_host,
             user="root",
             password=mysql_password,
             database="myrasabot"
@@ -527,7 +528,7 @@ class DeleteProduct(Action):
 
         # Connect to MySQL
         db = mysql.connector.connect(
-            host="localhost",
+            host=mysql_host,
             user="root",
             password=mysql_password,
             database="myrasabot"
@@ -566,7 +567,7 @@ class ViewProductByCallsForRemoval(Action):
                 
         # Connect to MySQL
         db = mysql.connector.connect(
-            host="localhost",
+            host=mysql_host,
             user="root",
             password=mysql_password,
             database="myrasabot"
@@ -633,7 +634,7 @@ class ActionSearchProducts(Action):
         # Connect to MySQL
     
         db = mysql.connector.connect(
-            host="localhost",
+            host=mysql_host,
             user="root",
             password=mysql_password,
             database="myrasabot"
@@ -742,7 +743,7 @@ class ActionPlaceOrder(Action):
         print(phno, password,orders_str)
         # Connect to MySQL database
         mydb = mysql.connector.connect(
-            host="localhost",
+            host=mysql_host,
             user="root",
             password=mysql_password,
             database="myrasabot"
@@ -838,7 +839,7 @@ class ActionShowRecentOrders(Action):
         
         # connect to MySQL database
         db = mysql.connector.connect(
-            host="localhost",
+            host=mysql_host,
             user="root",
             password=mysql_password,
             database="myrasabot"
@@ -909,7 +910,7 @@ class ActionShowFeedbackProducts(Action):
         
         # connect to the MySQL database
         db = mysql.connector.connect(
-            host="localhost",
+            host=mysql_host,
             user="root",
             password=mysql_password,
             database="myrasabot"
@@ -965,7 +966,7 @@ class ActionShowRecentOrders(Action):
         
         # connect to MySQL database
         db = mysql.connector.connect(
-            host="localhost",
+            host=mysql_host,
             user="root",
             password=mysql_password,
             database="myrasabot"
@@ -1027,7 +1028,7 @@ class ActionShowFeedbacks(Action):
 
         # Connect to MySQL database
         db = mysql.connector.connect(
-            host="localhost",
+            host=mysql_host,
             user="root",
             password=mysql_password,
             database="myrasabot"
@@ -1076,7 +1077,7 @@ class ActionShowFeedbacks(Action):
 
         # Connect to MySQL database
         db = mysql.connector.connect(
-            host="localhost",
+            host=mysql_host,
             user="root",
             password=mysql_password,
             database="myrasabot"
@@ -1144,7 +1145,7 @@ class ActionShowOrders(Action):
         
         # Connect to MySQL database
         db = mysql.connector.connect(
-            host="localhost",
+            host=mysql_host,
             user="root",
             password=mysql_password,
             database="myrasabot"
@@ -1264,7 +1265,7 @@ class ActionUpdateOrderStatus(Action):
 
         # Connect to MySQL database
         db = mysql.connector.connect(
-            host="localhost",
+            host=mysql_host,
             user="root",
             password=mysql_password,
             database="myrasabot"
@@ -1316,7 +1317,7 @@ class ActionUpdateProductQuantity(Action):
         
         # Connect to MySQL database
         db = mysql.connector.connect(
-            host="localhost",
+            host=mysql_host,
             user="root",
             password=mysql_password,
             database="myrasabot"
@@ -1389,7 +1390,7 @@ class ActionUpdateGraphs(Action):
         
         # Connect to MySQL database
         db = mysql.connector.connect(
-            host="localhost",
+            host=mysql_host,
             user="root",
             password=mysql_password,
             database="myrasabot"
@@ -1533,7 +1534,7 @@ class ActionExecuteCustomMysqlQuery(Action):
         # Connect to MySQL database
         try:
             db = mysql.connector.connect(
-                host="localhost",
+                host=mysql_host,
                 user="root",
                 password=mysql_password,
                 database="myrasabot"
@@ -1605,7 +1606,7 @@ class ActionExecuteCustomMysqlQuery(Action):
         # Connect to MySQL database
         try:
             connection = mysql.connector.connect(
-                host="localhost",
+                host=mysql_host,
                 user="root",
                 password=mysql_password,
                 database="myrasabot"
@@ -1621,7 +1622,7 @@ class ActionExecuteCustomMysqlQuery(Action):
 
         try:
             # Read SQL commands from the file
-            with open("final_sql_cmds.sql", "r") as file:
+            with open("myrasabot-dump.sql", "r") as file:
                 sql_commands = file.read().split(";")
 
             # Execute each SQL command
@@ -1633,10 +1634,10 @@ class ActionExecuteCustomMysqlQuery(Action):
             # Commit the changes to the database
             connection.commit()
 
-            dispatcher.utter_message(text="MySQL database has been initialized with the SQL commands from 'final_sql_cmds.sql'.")
+            dispatcher.utter_message(text="MySQL database has been initialized with the SQL commands from 'myrasabot-dump.sql'.")
 
         except FileNotFoundError:
-            dispatcher.utter_message(text="File 'final_sql_cmds.sql' not found.")
+            dispatcher.utter_message(text="File 'myrasabot-dump.sql' not found.")
 
         except Exception as e:
             dispatcher.utter_message(text=f"An error occurred while executing the SQL commands: {str(e)}")

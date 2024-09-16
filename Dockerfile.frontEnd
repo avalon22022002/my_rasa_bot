@@ -1,0 +1,15 @@
+# syntax=docker/dockerfile:1
+
+ARG PYTHON_VERSION=3.7.4
+FROM python:${PYTHON_VERSION}-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+WORKDIR /app
+
+# Copy the front-end files
+COPY ./my_rasa_bot_front_end /app
+
+# Default command to serve front-end files
+CMD ["sh", "-c", "echo 'check at http://localhost:8000' && python -m http.server 8000 --directory /app "]

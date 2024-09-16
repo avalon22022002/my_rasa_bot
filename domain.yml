@@ -33,6 +33,7 @@ intents:
 - update_product_quantity
 - update_graphs
 - execute_custom_sql_query
+- tell_purpose
 
 
 

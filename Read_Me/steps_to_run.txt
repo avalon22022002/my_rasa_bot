@@ -3,7 +3,7 @@ Install rasa
   pip install rasa==2.5.1 rasa-sdk==2.5.0
 Install mysql ( and update ur mysql details in actions.py file ) 
 Create a database myrasabot
-Also run final_sql_cmds.sql to initialize the database.. 
+Also run myrasabot-dump.sql to initialize the database.. 
 Make sure you have python version 3.7.4
 
 Cmds to run 

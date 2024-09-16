@@ -8,7 +8,7 @@ demo vedio on youtube: [link](https://youtu.be/KJ2jtecqijE)
 
 start/stop your application with docker:
 1) `docker compose down -v` properly shut-down if it was running before.
-2) `docker compose up --build`. Start application , it may take a some time and space
+2) `docker compose up --build`. Start application , it may take a some time and space <br/>
     Your application will be available at http://localhost:8000.
 3) `docker compose down -v` to properly shut-down
 
